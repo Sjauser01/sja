@@ -1,11 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
-import re, time
+from flask import Flask, render_template, request, redirect, url_for, flash
+import time, requests, re, smtplib, imaplib
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
-import smtplib, imaplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email_validator import validate_email, EmailNotValidError
 
 class Base(DeclarativeBase):
   pass
@@ -14,6 +12,7 @@ db = SQLAlchemy(model_class=Base)
 
 #app initialization
 app = Flask(__name__)
+app.secret_key = "gfcvhbdhfluesrhbb7652153r4gvg"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///inquiry.db"
 app.config['SQLALCHEMY TRACK_MODIFICATIONS'] = False
@@ -48,12 +47,31 @@ with app.app_context():
     db.create_all()
 
 
-@app.route('/',methods=['GET','POST'])
-def html():
-    return render_template('main.html')
+def validate_name(name):
+    """Check if name contains only alphabets."""
+    return bool(re.fullmatch(r"^[A-Za-z\s]{1,50}$", name))
 
-@app.route('/send_email', methods=['POST'])
-def send_email():
+def validate_text_field(text):
+    """Validate fields like company name, title, and request.
+    - Allows alphabets, numbers, full stops (.)
+    - No URLs (http, www, .com, etc.)
+    """
+    if re.search(r"(http|www|\.com|\.net|\.org)", text, re.IGNORECASE):
+        return False
+    return bool(re.fullmatch(r"^[A-Za-z0-9.\s]{1,100}$", text))
+
+def validate_email(email):
+    """Check if the email is valid using an external API."""
+    try:
+        response = requests.get(f"https://emailvalidation.abstractapi.com/v1/?api_key=935198eca9e6496299769a5e2489357f&email={email}")
+        data = response.json()
+        return data.get("is_valid_format", {}).get("value", False)
+    except:
+        return False
+
+@app.route('/', methods=['GET','POST'])
+def home():
+    form_data ={}
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
@@ -62,13 +80,37 @@ def send_email():
         industrytype = request.form['industrytype']
         title = request.form['title']
         req = request.form['req']
+
+        form_data = {
+            "name": request.form.get('name'),
+            "email": request.form.get('email'),
+            "phone": request.form.get('phone'),
+            "company" : request.form.get('company'),
+            "industrytype" : request.form.get('industrytype'),
+            "title" : request.form.get('title'),
+            "req": request.form.get('req'),
+            }
         
-        # Validate email
-        try:
-            valid = validate_email(email,check_deliverability=False)
-            email = valid.email  # Normalized email address
-        except EmailNotValidError as e:
-            return f"Invalid email address: {str(e)}"
+        # Field-specific validation
+        if not validate_name(form_data["name"]):
+            flash("❌ Name must contain only alphabets!", "error")
+            return render_template("main.html", form_data=form_data)
+
+        if not validate_email(form_data["email"]):
+            flash("❌ Email is not valid!", "error")
+            return render_template("main.html", form_data=form_data)
+
+        if not validate_text_field(form_data["company"]):
+            flash("❌ Invalid Company Name!", "error")
+            return render_template("main.html", form_data=form_data)
+
+        if not validate_text_field(form_data["title"]):
+            flash("❌ Invalid Title!", "error")
+            return render_template("main.html", form_data=form_data)
+
+        if not validate_text_field(form_data["req"]):
+            flash("❌ Invalid Inquiry", "error")
+            return render_template("main.html", form_data=form_data)
         
         # Save data to database and send emails
         En = inquiry(name=name, email=email, title=title, req=req, phone=phone, company=company, industrytype=industrytype)
@@ -80,7 +122,8 @@ def send_email():
 
         # Email configuration
         sender_email = "info@sanjoseautomation.com"
-        admin_emails = ["umeshbobade2002@gmail.com","amarpalapure@live.com","jadhav.prashant123@outlook.com"]
+        #,"amarpalapure@live.com","jadhav.prashant123@outlook.com"
+        admin_emails = ["umeshbobade2002@gmail.com"]
         receiver_email = email
         password = "Sja@unoligent24"
 
@@ -123,8 +166,8 @@ def send_email():
                 print("Sent email saved to Sent folder.")
         except Exception as e:
             return str(e)
-
-    return redirect('/')
+        return redirect('/')
+    return render_template("main.html", form_data=form_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')

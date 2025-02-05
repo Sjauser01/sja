@@ -12,6 +12,30 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+
+    <style>
+      /* Flash Message Popup Styles */
+      .flash-popup {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 14px;
+          z-index: 10000;
+          display: none;
+          animation: fadeInOut 4s ease-in-out;
+      }
+      .error { background-color:rgb(255, 0, 21); color:rgb(255, 255, 255); border: 1px rgb(255, 0, 0); }
+      .success { background-color:rgb(0, 255, 60); color:rgb(255, 255, 255); border: 1px rgb(0, 255, 17); }
+
+      @keyframes fadeInOut {
+          0% { opacity: 0; transform: translateY(-10px); }
+          10% { opacity: 1; transform: translateY(0); }
+          90% { opacity: 1; }
+          100% { opacity: 0; transform: translateY(-10px); }
+      }
+    </style>
     
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/all.css')}}">
@@ -23,6 +47,18 @@
   </head>
 
   <body>
+
+    <!-- Flash Messages as Popups -->
+    <div id="flash-container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="flash-popup {{ category }}">{{ message }}</div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </div>
+
     <!-- Header -->
     <header class="">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -500,31 +536,23 @@
           </div>
           <div class="col-md-12">
             <div class="contact-form">
-              <form id="contact" action="/send_email" method="post">
+              <form class="was-validated" id="contact" action="/" method="POST">
                 <div class="row">
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" pattern="[A-Za-z\s]{1,50}" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="phone" type="tel" class="form-control" id="phone" placeholder="Phone Number" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="company" type="text" class="form-control" id="company" pattern="[A-Za-z.\s]{1,50}" placeholder="Company Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <select name="industrytype" id="industrytype" required="">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <input name="name" type="text" class="form-control" id="name" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" value="{{ form_data.get('name', '') }}" placeholder="Full Name" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" value="{{ form_data.get('email', '') }}" required>
+                        <small id="email-error" class="error" style="color: red; display: none;">Invalid or non-existent email</small>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <input name="phone" type="tel" class="form-control" id="phone" placeholder="Phone Number" value="{{ form_data.get('phone', '') }}" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <input name="company" type="text" class="form-control" id="company" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" value="{{ form_data.get('company', '') }}" placeholder="Company Name" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                      <select name="industrytype" id="industrytype" required>
                         <option value="" disabled selected>Select Industry type</option>
                         <option value="Agriculture">Agriculture</option>
                         <option value="Automotive">Automotive</option>
@@ -548,26 +576,18 @@
                         <option value="Travel and Tourism">Travel and Tourism</option>
                         <option value="custom">Others</option>
                       </select>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="title" type="text" class="form-control" id="title" pattern="[A-Za-z.,\s]{1,50}" placeholder="Title" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="req" rows="6" class="form-control" id="req" pattern="[A-Za-z.,0-1\s]{1,200}" placeholder="Your requirements" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="border-button">Submit</button>
-                    </fieldset>
-                  </div>
-                  <p id="error-msg" class="error" style="display:none;"></p>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <input name="title" type="text" class="form-control" id="title" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" value="{{ form_data.get('title', '') }}" placeholder="Title" required>
+                    </div>
+                    <div class="col-lg-12">
+                      <textarea class="form-control" name="req" rows="6" id="req" placeholder="Your requirements" value="{{ form_data.get('req', '') }}" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" required></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                      <button type="submit" id="form-submit" class="border-button" disabled>Submit</button>
+                    </div>
                 </div>
-              </form>
+              </form>            
             </div>
           </div>
         </div>
@@ -622,6 +642,10 @@
     <script src="{{url_for('static', filename='assets/js/intlTelInput.min.js')}}"></script>
     <script src="{{url_for('static', filename='assets/js/utils.js')}}"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>-->
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <script>
       $(function() {
         // Single Page Nav
@@ -636,6 +660,7 @@
         });
       });
     </script>
+
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
       function clearField(t){                   //declaring the array outside of the
@@ -646,6 +671,7 @@
           }
       }
     </script>
+
     <script>
       // Function to initialize the carousel animation
       function startCarousel() {
@@ -667,6 +693,7 @@
       // Start the carousel once the DOM content is loaded
       document.addEventListener('DOMContentLoaded', startCarousel);
     </script>
+
     <!--Phone Number https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js-->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
@@ -694,5 +721,121 @@
         });
       });
     </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contact");
+        const submitButton = document.getElementById("form-submit");
+    
+        // Create a single error notification at the top
+        const errorNotification = document.createElement("div");
+        errorNotification.id = "form-error-notification";
+        errorNotification.style.display = "none"; // Initially hidden
+        errorNotification.style.color = "white";
+        errorNotification.style.backgroundColor = "red";
+        errorNotification.style.padding = "10px";
+        errorNotification.style.borderRadius = "5px";
+        errorNotification.style.marginBottom = "10px";
+        errorNotification.style.textAlign = "center";
+        errorNotification.style.fontSize = "14px";
+        form.insertAdjacentElement("beforebegin", errorNotification);
+    
+        // Updated validation patterns
+        const fields = [
+            { id: "name", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Name. Only alphabets allowed." },
+            { id: "email", pattern: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, error: "Invalid Email" },
+            { id: "phone", pattern: null, error: "Invalid phone number" }, // Handled separately
+            { id: "company", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Company Name" },
+            { id: "industrytype", pattern: /.+/, error: "Please select an industry type" },
+            { id: "title", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$/, error: "Enter Valid Title" },
+            { id: "req", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{5,}$/, error: "Enter the valid Inquiry. Must be at least 5 characters." }
+        ];
+    
+        // Initialize phone validation
+        const phoneInput = document.getElementById("phone");
+        const phoneIntl = window.intlTelInput(phoneInput, {
+            initialCountry: "us",
+            utilsScript: "{{url_for('static', filename='assets/js/utils.js')}}"
+        });
+    
+        // Validate a single field and update the notification
+        function validateField(field) {
+            const input = document.getElementById(field.id);
+            let isValid = true;
+    
+            if (field.pattern) {
+                isValid = field.pattern.test(input.value.trim());
+            } else if (field.id === "phone") {
+                isValid = phoneIntl.isValidNumber();
+            }
+    
+            if (!isValid) {
+                showErrorNotification(field.error);
+            } else {
+                clearErrorNotification();
+            }
+    
+            return isValid;
+        }
+    
+        // Function to show a single error message at the top
+        function showErrorNotification(message) {
+            errorNotification.textContent = message;
+            errorNotification.style.display = "block";
+        }
+    
+        // Function to clear the error notification
+        function clearErrorNotification() {
+            errorNotification.style.display = "none";
+        }
+    
+        // Check if all fields are valid and enable/disable submit button
+        function checkValidation() {
+            let allValid = fields.every(validateField);
+            submitButton.disabled = !allValid;
+        }
+    
+        // Debounce function to delay validation after the user stops typing
+        function debounce(func, delay) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+    
+        // Add event listeners for real-time validation with a delay (debounced)
+        fields.forEach(field => {
+            const input = document.getElementById(field.id);
+            const debouncedValidate = debounce(() => {
+                validateField(field);
+                checkValidation();
+            }, 500);
+    
+            input.addEventListener("input", debouncedValidate);
+    
+            if (field.id === "industrytype") {
+                input.addEventListener("change", checkValidation);
+            }
+        });
+    
+        // Initial validation check
+        checkValidation();
+      });    
+    </script>
+
+    <script>
+      // Show flash messages as popups
+      document.addEventListener("DOMContentLoaded", function () {
+          const flashMessages = document.querySelectorAll(".flash-popup");
+          flashMessages.forEach(msg => {
+              msg.style.display = "block";
+              setTimeout(() => {
+                  msg.style.display = "none";
+              }, 4000); // Hide after 4 seconds
+          });
+      });
+    </script>
+
   </body>
 </html>

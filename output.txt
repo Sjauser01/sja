@@ -1,22 +1,19 @@
-name,email,phone,company,industrytype,title,requirements
-Alexander Jackson,alexajacks122@gmail.com,+917499699022,Infinity Solutions,Healthcare,asdfgh,asdfghn
-Alexander Jackson,alexajacks122@gmail.com,+11234567890,Infinity Solutions,IT and Technology,test,test
-Alexander Jackson,alexajacks122@gmail.com,+11234567890,Infinity Solutions,Healthcare,test,test
-Alex Jackson,alexajacks122@gmail.com,+11234567890,test,Marketing and Advertising,test,test
-Alex Jackson,alexajacks122@gmail.com,+11234567890,test,Media and Publishing,test,test
-Alex Jackson,alexajacks122@gmail.com,+11234567890,test,Energy and Utilities,test,test
-Alex Jackson,alexajacks122@gmail.com,+15456787411,test,Agriculture,jhbsdd,kjhbsdiuvgoblsabv
-Alex Jackson,alexajacks122@gmail.com,+15487966316,test,Marketing and Advertising,test,kjhvlhdjdnbfhsv
-Alex Jackson,alexajacks122@gmail.com,+15654987623,test,Media and Publishing,kh,jhbdgsoyv
-Alex Jackson,alexajacks122@gmail.com,+15654987623,test,Media and Publishing,kh,jhbdgsoyv
-Alex Jackson,alexajacks122@gmail.com,+15654987623,test,Media and Publishing,kh,jhbdgsoyv
-Alex Jackson,alexajacks122@gmail.com,+15187451961,test,Retail,test,jkhvvkj
-Alex Jackson,alexajacks122@gmail.com,+14984611211,test,Media and Publishing,test,kjhdbsuvfigiushb
-Alex Jackson,alexajacks122@gmail.com,+14974164132,test,Agriculture,jhgiv,lkkjhbssuygcobv xhv
-Alex Jackson,alexajacks122@gmail.com,+12158851222,test,Retail,hjgkghb,m,nsdbkjfygksduvgjfjhs
-Alex Jackson,alexajacks122@gmail.com,+12158851222,test,Retail,hjgkghb,m,nsdbkjfygksduvgjfjhs
-Alex Jackson,alexajacks122@gmail.com,+18994789415,test,Non-Profit,Test,Testing
-Alex Jackson,alexajacks122@gmail.com,+18994789415,test,Non-Profit,Test,Testing
-Alex Jackson,alexajacks122@gmail.com,+19845145569,test,Media and Publishing,test,Tesing
-Alex Jackson,alexajacks122@gmail.com,+15484512155,test,Real Estate,Test,tesing
-Alex Jackson,alexajacks122@gmail.com,+14874231646,test,Entertainment,Test,Tesing
+# Email configuration
+        sender_email = "info@sanjoseautomation.com"
+        admin_emails = ["umeshbobade2002@gmail.com","amarpalapure@live.com","jadhav.prashant123@outlook.com"]
+        receiver_email = email
+        password = "Sja@unoligent24"
+
+Alex Jackson,alexajacks122@gmail.com,+17865847686,Test,Non-Profit,Test,Test
+Alex Jackson,alexajacks122@gmail.com,+14567891234,Test,Non-Profit,Test,hgvuygwu
+5678172,alexajacks122@gmail.com,+12345678967,Test,Manufacturing,Test,test
+alex,alexajacks122@gmail.com,+14567889987,Test,Media and Publishing,Test,Testing
+alex,hjb@bj.cj,+12346886897,Test,Non-Profit,Test,testing
+alex,hjb@bj.cj,+12346886897,Test,Non-Profit,Test,testing
+Alex Jackson,alexajacks122@gmail.com,+16382928376,test,Media and Publishing,test,whgvdcvygd
+Alex Jackson,alexajacks122@gmail.com,+13456789567,Test,Manufacturing,Test,Testing
+Tester,alexajacks122@gmail.com,+12345678907,Test,Telecommunications,Test,testing
+Alex Jackson,hjb@bj.cj,+13579987655,Test,Hospitality,Test,Testing
+Alex Jackson,hjb@bj.cj,+13456789022,Test,Healthcare,Test,Testing
+Alex Jackson,alexajacks122@gmail.com,+12345678568,Test,IT and Technology,Test,Testing
+Alex Jackson,alexajacks122@gmail.com,+12345678909,Test,Healthcare,Test,Testing
