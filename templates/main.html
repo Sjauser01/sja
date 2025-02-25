@@ -583,6 +583,11 @@
                     <div class="col-lg-12">
                       <textarea class="form-control" name="req" rows="6" id="req" placeholder="Your requirements" value="{{ form_data.get('req', '') }}" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" required></textarea>
                     </div>
+                    <div class="col-lg-12 d-flex flex-column align-items-center">
+                      <!-- Add Google reCAPTCHA widget -->
+                      <div class="g-recaptcha" data-sitekey="6LevP-EqAAAAAOmuFcMpkJDFhpesq_VFIME6tIBs" data-callback="recaptchaCallback"></div>
+                      <small id="captcha-error" class="error" style="color: red; display: none;">Please complete the CAPTCHA to enable submission.</small>
+                    </div>
                     <div class="col-lg-12">
                       <button type="submit" id="form-submit" class="border-button" disabled>Submit</button>
                     </div>
@@ -644,6 +649,7 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>-->
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
     <script>
@@ -661,6 +667,25 @@
       });
     </script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById("contact");
+          const submitButton = document.getElementById("form-submit");
+      
+          form.addEventListener("submit", function (event) {
+              const captchaResponse = grecaptcha.getResponse();
+              const captchaError = document.getElementById("captcha-error");
+      
+              if (!captchaResponse) {
+                  event.preventDefault(); // Stop form submission
+                  captchaError.style.display = "block";
+              } else {
+                  captchaError.style.display = "none"; // Allow submission if CAPTCHA is verified
+              }
+          });
+      });
+    </script>
+  
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
       function clearField(t){                   //declaring the array outside of the
@@ -724,106 +749,125 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("contact");
-        const submitButton = document.getElementById("form-submit");
-    
-        // Create a single error notification at the top
-        const errorNotification = document.createElement("div");
-        errorNotification.id = "form-error-notification";
-        errorNotification.style.display = "none"; // Initially hidden
-        errorNotification.style.color = "white";
-        errorNotification.style.backgroundColor = "red";
-        errorNotification.style.padding = "10px";
-        errorNotification.style.borderRadius = "5px";
-        errorNotification.style.marginBottom = "10px";
-        errorNotification.style.textAlign = "center";
-        errorNotification.style.fontSize = "14px";
-        form.insertAdjacentElement("beforebegin", errorNotification);
-    
-        // Updated validation patterns
-        const fields = [
-            { id: "name", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Name. Only alphabets allowed." },
-            { id: "email", pattern: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, error: "Invalid Email" },
-            { id: "phone", pattern: null, error: "Invalid phone number" }, // Handled separately
-            { id: "company", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Company Name" },
-            { id: "industrytype", pattern: /.+/, error: "Please select an industry type" },
-            { id: "title", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$/, error: "Enter Valid Title" },
-            { id: "req", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{5,}$/, error: "Enter the valid Inquiry. Must be at least 5 characters." }
-        ];
-    
-        // Initialize phone validation
-        const phoneInput = document.getElementById("phone");
-        const phoneIntl = window.intlTelInput(phoneInput, {
-            initialCountry: "us",
-            utilsScript: "{{url_for('static', filename='assets/js/utils.js')}}"
-        });
-    
-        // Validate a single field and update the notification
-        function validateField(field) {
-            const input = document.getElementById(field.id);
-            let isValid = true;
-    
-            if (field.pattern) {
-                isValid = field.pattern.test(input.value.trim());
-            } else if (field.id === "phone") {
-                isValid = phoneIntl.isValidNumber();
-            }
-    
-            if (!isValid) {
-                showErrorNotification(field.error);
-            } else {
-                clearErrorNotification();
-            }
-    
-            return isValid;
-        }
-    
-        // Function to show a single error message at the top
-        function showErrorNotification(message) {
-            errorNotification.textContent = message;
-            errorNotification.style.display = "block";
-        }
-    
-        // Function to clear the error notification
-        function clearErrorNotification() {
-            errorNotification.style.display = "none";
-        }
-    
-        // Check if all fields are valid and enable/disable submit button
-        function checkValidation() {
-            let allValid = fields.every(validateField);
-            submitButton.disabled = !allValid;
-        }
-    
-        // Debounce function to delay validation after the user stops typing
-        function debounce(func, delay) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), delay);
-            };
-        }
-    
-        // Add event listeners for real-time validation with a delay (debounced)
-        fields.forEach(field => {
-            const input = document.getElementById(field.id);
-            const debouncedValidate = debounce(() => {
-                validateField(field);
-                checkValidation();
-            }, 500);
-    
-            input.addEventListener("input", debouncedValidate);
-    
-            if (field.id === "industrytype") {
-                input.addEventListener("change", checkValidation);
-            }
-        });
-    
-        // Initial validation check
-        checkValidation();
-      });    
+          const form = document.getElementById("contact");
+          const submitButton = document.getElementById("form-submit");
+          const captchaError = document.getElementById("captcha-error");
+      
+          // Create a single error notification at the top
+          const errorNotification = document.createElement("div");
+          errorNotification.id = "form-error-notification";
+          errorNotification.style.display = "none"; // Initially hidden
+          errorNotification.style.color = "white";
+          errorNotification.style.backgroundColor = "red";
+          errorNotification.style.padding = "10px";
+          errorNotification.style.borderRadius = "5px";
+          errorNotification.style.marginBottom = "10px";
+          errorNotification.style.textAlign = "center";
+          errorNotification.style.fontSize = "14px";
+          form.insertAdjacentElement("beforebegin", errorNotification);
+      
+          // Validation patterns for fields
+          const fields = [
+              { id: "name", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Name. Only alphabets allowed." },
+              { id: "email", pattern: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, error: "Invalid Email" },
+              { id: "phone", pattern: null, error: "Invalid phone number" }, // Handled separately
+              { id: "company", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Company Name" },
+              { id: "industrytype", pattern: /.+/, error: "Please select an industry type" },
+              { id: "title", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$/, error: "Enter Valid Title" },
+              { id: "req", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{5,}$/s, error: "Enter a valid Inquiry. Must be at least 5 characters." }
+          ];
+      
+          // Initialize phone validation
+          const phoneInput = document.getElementById("phone");
+          const phoneIntl = window.intlTelInput(phoneInput, {
+              initialCountry: "us",
+              utilsScript: "{{url_for('static', filename='assets/js/utils.js')}}"
+          });
+      
+          // Function to validate fields
+          function validateField(field) {
+              const input = document.getElementById(field.id);
+              let isValid = true;
+      
+              if (field.pattern) {
+                  isValid = field.pattern.test(input.value.trim());
+              } else if (field.id === "phone") {
+                  isValid = phoneIntl.isValidNumber();
+              }
+      
+              if (!isValid) {
+                  showErrorNotification(field.error);
+              } else {
+                  clearErrorNotification();
+              }
+      
+              return isValid;
+          }
+      
+          // Function to show error message at the top
+          function showErrorNotification(message) {
+              errorNotification.textContent = message;
+              errorNotification.style.display = "block";
+          }
+      
+          // Function to clear error notification
+          function clearErrorNotification() {
+              errorNotification.style.display = "none";
+          }
+      
+          // Function to check overall validation
+          function checkValidation() {
+              let allValid = fields.every(validateField);
+              let captchaValid = grecaptcha.getResponse().length > 0; // Check CAPTCHA response
+              submitButton.disabled = !(allValid && captchaValid);
+          }
+      
+          // Debounce function to optimize real-time validation
+          function debounce(func, delay) {
+              let timeout;
+              return function (...args) {
+                  clearTimeout(timeout);
+                  timeout = setTimeout(() => func.apply(this, args), delay);
+              };
+          }
+      
+          // Attach event listeners for real-time validation
+          fields.forEach(field => {
+              const input = document.getElementById(field.id);
+              const debouncedValidate = debounce(() => {
+                  validateField(field);
+                  checkValidation();
+              }, 500);
+      
+              input.addEventListener("input", debouncedValidate);
+      
+              if (field.id === "industrytype") {
+                  input.addEventListener("change", checkValidation);
+              }
+          });
+      
+          // Function to enable submit button only after CAPTCHA is completed
+          function enableSubmitButton() {
+              checkValidation();
+              captchaError.style.display = grecaptcha.getResponse().length > 0 ? "none" : "block";
+          }
+      
+          // Attach function to reCAPTCHA callback
+          window.recaptchaCallback = enableSubmitButton;
+      
+          // Prevent form submission if CAPTCHA is not clicked
+          form.addEventListener("submit", function (event) {
+              if (grecaptcha.getResponse().length === 0) {
+                  event.preventDefault(); // Stop form submission
+                  captchaError.style.display = "block"; // Show error message
+              }
+          });
+      
+          // Initial validation check
+          checkValidation();
+      });
     </script>
-
+      
     <script>
       // Show flash messages as popups
       document.addEventListener("DOMContentLoaded", function () {
