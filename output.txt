@@ -4,20 +4,6 @@
         receiver_email = email
         password = "Sja@unoligent24"
 
-Alex Jackson,alexajacks122@gmail.com,+17865847686,Test,Non-Profit,Test,Test
-Alex Jackson,alexajacks122@gmail.com,+14567891234,Test,Non-Profit,Test,hgvuygwu
-5678172,alexajacks122@gmail.com,+12345678967,Test,Manufacturing,Test,test
-alex,alexajacks122@gmail.com,+14567889987,Test,Media and Publishing,Test,Testing
-alex,hjb@bj.cj,+12346886897,Test,Non-Profit,Test,testing
-alex,hjb@bj.cj,+12346886897,Test,Non-Profit,Test,testing
-Alex Jackson,alexajacks122@gmail.com,+16382928376,test,Media and Publishing,test,whgvdcvygd
-Alex Jackson,alexajacks122@gmail.com,+13456789567,Test,Manufacturing,Test,Testing
-Tester,alexajacks122@gmail.com,+12345678907,Test,Telecommunications,Test,testing
-Alex Jackson,hjb@bj.cj,+13579987655,Test,Hospitality,Test,Testing
-Alex Jackson,hjb@bj.cj,+13456789022,Test,Healthcare,Test,Testing
-Alex Jackson,alexajacks122@gmail.com,+12345678568,Test,IT and Technology,Test,Testing
-Alex Jackson,alexajacks122@gmail.com,+12345678909,Test,Healthcare,Test,Testing
-Alex Jackson,alexajacks122@gmail.com,+12345725237,Test,Real Estate,Test,Testing captcha
-Alex Jackson,alexajacks122@gmail.com,+12345678909,Test,Entertainment,Test,Testing
-Alex Jackson,alexajacks122@gmail.com,+12345678906,Test,Real Estate,Test,Testing
-captcha
+
+Umesh,alexajacks122@gmail.com,+915676767777,Test,Agriculture,Test,testing
+Umesh,alexajacks122@gmail.com,+917499699022,Test,Retail,test,testing

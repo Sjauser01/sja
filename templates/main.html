@@ -70,21 +70,9 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                 <a class="nav-link" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                 <a class="nav-link" href="#services">Products & Services</a>
-              </li>
-              <li class="nav-item">
-                 <a class="nav-link" href="#about">About Us</a>
-              </li>              
+            <ul class="navbar-nav ml-auto">             
               <li class="nav-item">
                  <a class="nav-link" href="#contactus">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                 <a class="nav-link" href="#Inquiry">Inquiry Form</a>
               </li>
            </ul>           
           </div>
@@ -98,386 +86,15 @@
         <div class="item item-1">
           <div class="img-fill"></div>
           <div class="text-content">
-            <h6>we are ready to help you</h6>
-            <h4>Engineering Solutions</h4>
-            <p>We offer a comprehensive range of precision engineering services, including high precision syringe pumps, repeaters, and peristaltic pumps, alongside automated jig and fixture design. Our expertise extends to part design with CNC support, custom cable design, and advanced 3D printing and rapid prototyping. Additionally, we specialize in reliable diaphragm pumps and cutting-edge industrial water filtration systems to meet diverse industrial needs.</p>
-            <a href="#contactus" class="filled-button">contact us</a>
-          </div>
-        </div>
-
-        <div class="item item-2">
-          <div class="img-fill"></div>
-          <div class="text-content">
-            <h6>we are here to support you</h6>
-            <h4>Manufacturing and Supply Chain</h4>
-            <p>Specializes in enhancing manufacturing processes through expert consultation and seamless ERP system implementation. We excel in sourcing and supplying high-quality parts from Asia to the USA, including stepper motors, servo motors, DC motors, AC motors, and progressive stamping parts and component shells, ensuring efficiency and reliability in your supply chain.</p>
-            <a href="#services" class="filled-button">our services</a>
-          </div>
-        </div>
-
-        <div class="item item-3">
-          <div class="img-fill"></div>
-          <div class="text-content">
-            <h6>we are also in</h6>
-            <h4>Robotics</h4>
-            <p>We also offer state-of-the-art robotics technology, including XYZ robots and 6-axis robots, designed for precision and efficiency in various applications. We also specialize in PLC development to ensure seamless integration and control of robotic systems in your operations.</p>
-            <a href="#about" class="filled-button">learn more</a>
-          </div>
-        </div>
-
-        <div class="item item-4">
-          <div class="img-fill"></div>
-          <div class="text-content">
-            <h6>we have a solid background</h6>
-            <h4>Automation and IoT Solutions</h4>
-            <p>We deliver cutting-edge automation and IoT solutions, including oven and furnace automation with process flow data capture, and tap density machines. We offer complete home automation using ESP32 or other advanced controllers, tailored to the latest technological advancements. Our expertise extends to IoT automation and precise flow control automations using Alicats and PID controllers.</p>
-            <a href="#about" class="filled-button">learn more</a>
+            <h6>Efficiency, Traceability, and Speed All in One Platform</h6>
+            <p>San Jose Automation unifies ERP, MES, procurement, supply chain and quality into one intelligent ecosystem. By integrating procurement directly into MES, manufacturers can streamline supplier collaboration, ensure just-in-time material availability, and optimize costs—all while maintaining full visibility from raw materials to finished goods. The result is faster production cycles, end-to-end traceability, and a shorter path to market.</p>
+            <a href="#contactus" class="filled-button">Contact us</a>
           </div>
         </div>
       </div>
     </div>
     <!-- Banner Ends Here -->
 
-    <!--Services and products offered by company-->
-    <div class="services" id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Products & Services</em></h2>
-              <span> What Actually We Do!</span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="service-item">
-              <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="4"></li>
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="5"></li>
-                  <li data-target="#carouselExampleIndicators1" data-slide-to="6"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/syringe pumps.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      High Precision Syringe Pumps
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/jig and fixtures.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Jig and Fixture Design
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/cable design.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Cable Design
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/3D printing.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      3D printing
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/rapid prototyping.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Rapid Prototyping
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Diaphragm pump.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Diaphragm Pump
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Industrial Water filtration system.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Industrial Water Filtration System
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-              <div class="down-content">
-                <h4>Engineering Solutions</h4>
-                <ul>
-                  <li>High Precision Syringe Pumps, Repeaters, Peristaltic Pumps</li>
-                  <li>Jig and Fixture Design</li>
-                  <li>Cable Design</li>
-                  <li>3D printing and Rapid Prototyping</li>
-                  <li>Diaphragm Pump</li>
-                  <li>Industrial Water Filtration System</li>
-                </ul>
-                <div class="read-more-button">
-                  <button type="button" class="btn">Read More</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="service-item">
-              <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-                  <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
-                  <li data-target="#carouselExampleIndicators2" data-slide-to="4"></li>
-                  <li data-target="#carouselExampleIndicators2" data-slide-to="5"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Manufacturing process.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Manufacturing process improvement consultation
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/ERP system implementation.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      ERP system implementation
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/part design.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Part Design
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/CNC Support.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      CNC Support
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Sourcing.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Sourcing
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/supply chain.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Supply of parts
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-              <div class="down-content">
-                <h4>Manufacturing and Supply Chain</h4>
-                <ul>
-                  <li>Manufacturing process improvement consultation</li>
-                  <li>ERP system implementation</li>
-                  <li>Part Design and CNC Support</li>
-                  <li>Sourcing and supply of parts from Asia to the USA, including:
-                    <li>Stepper motors and Servo motors</li>
-                    <li>DC motors and AC motors</li>
-                    <li>Progressive stamping parts and component shells</li>
-                  </li>
-                </ul>
-                <div class="read-more-button">
-                  <button type="button" class="btn">Read More</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-        <br>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="service-item">
-              <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
-                  <li data-target="#carouselExampleIndicators3" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/PLC development.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      PLC Development
-                    </div>
-                  </div>
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/XYZ robots.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      XYZ Robots
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/6-axis robots.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      6-axis Robots
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/manufacturing industry purpose.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Manufacturing purpose Robots
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-              <div class="down-content">
-                <h4>Robotics</h4>
-                <ul>
-                  <li>XYZ Robots</li>
-                  <li>6-axis Robots</li>
-                  <li>PLC Development</li>
-                </ul>
-                <div class="read-more-button">
-                  <button type="button" class="btn">Read More</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-6">
-            <div class="service-item">
-              <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators4" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators4" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators4" data-slide-to="2"></li>
-                  <li data-target="#carouselExampleIndicators4" data-slide-to="3"></li>
-                  <li data-target="#carouselExampleIndicators4" data-slide-to="4"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Oven And Furnace Automation.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Oven and Furnace Automation
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Tap Density Machine.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Tap Density Machine
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Home Automation.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Home Automation
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/IoT Automation.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      IOT automation
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url_for('static', filename='assets/images/Flow control Automations.jpg')}}">
-                    <div class="carousel-caption d-none d-md-block">
-                      Flow control automations
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-              <div class="down-content">
-                <h4>Automation and IoT Solutions</h4>
-                <ul>
-                  <li>Oven and Furnace Automation, Process flow data capture</li>
-                  <li>Tap density machine</li>
-                  <li>Complete home automation using ESP32 or other advanced controllers</li>
-                  <li>IOT automation</li>
-                  <li>Flow control automations using Alicats,PID CONTROLLERS</li>
-                </ul>
-                <div class="read-more-button">
-                  <button type="button" class="btn">Read More</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Information related to company-->
-    <div class="about" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>About Us</em></h2>
-            </div>
-          </div>
-        </div>
-        <div class="more-info" id="about">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="more-info-content">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="left-image">
-                        <img src="{{url_for('static', filename='assets/images/ERP system implementation.jpg')}}" alt="">
-                      </div>
-                    </div>
-                    <div class="col-md-6 align-self-center">
-                      <div class="right-content">
-                        <span>Who we are</span>
-                        <h2 style="color: black;">Get to know about <em>our company</em></h2>
-                        <p>Welcome to San Jose Automation, your trusted partner in delivering cutting-edge engineering, manufacturing, supply chain, automation, IoT, and robotics solutions. Our services include high precision syringe pumps, automated jig and fixture design, CNC support, custom cable design, 3D printing, and advanced water filtration systems. We improve manufacturing processes, implement ERP systems, and source parts from Asia to the USA. Our automation expertise covers oven and furnace automation, home automation with ESP32 controllers, and precise flow control with Alicats and PID controllers. Additionally, we provide XYZ and 6-axis robots, along with PLC development for seamless integration.</p>
-                        <a href="#" class="filled-button">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!--Contact Information-->
     <div class="contact" id="contactus" style="width: 100%;">
@@ -530,69 +147,91 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Inquiry Form</h2>
+              <h2>Reach Out to Us</h2>
               <span>Fill the form and we will contact you back!</span>
             </div>
           </div>
           <div class="col-md-12">
             <div class="contact-form">
-              <form class="was-validated" id="contact" action="/" method="POST">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <input name="name" type="text" class="form-control" id="name" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" value="{{ form_data.get('name', '') }}" placeholder="Full Name" required>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" value="{{ form_data.get('email', '') }}" required>
-                        <small id="email-error" class="error" style="color: red; display: none;">Invalid or non-existent email</small>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <input name="phone" type="tel" class="form-control" id="phone" placeholder="Phone Number" value="{{ form_data.get('phone', '') }}" required>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <input name="company" type="text" class="form-control" id="company" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" value="{{ form_data.get('company', '') }}" placeholder="Company Name" required>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                      <select name="industrytype" id="industrytype" required>
-                        <option value="" disabled selected>Select Industry type</option>
-                        <option value="Agriculture">Agriculture</option>
-                        <option value="Automotive">Automotive</option>
-                        <option value="Aviation">Aviation</option>
-                        <option value="Banking and Finance">Banking and Finance</option>
-                        <option value="Construction">Construction</option>
-                        <option value="Education">Education</option>
-                        <option value="Energy and Utilities">Energy and Utilities</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Healthcare">Healthcare</option>
-                        <option value="Hospitality">Hospitality</option>
-                        <option value="IT and Technology">IT and Technology</option>
-                        <option value="Manufacturing">Manufacturing</option>
-                        <option value="Marketing and Advertising">Marketing and Advertising</option>
-                        <option value="Media and Publishing">Media and Publishing</option>
-                        <option value="Non-Profit">Non-Profit</option>
-                        <option value="Real Estate">Real Estate</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Telecommunications">Telecommunications</option>
-                        <option value="Transportation and Logistics">Transportation and Logistics</option>
-                        <option value="Travel and Tourism">Travel and Tourism</option>
-                        <option value="custom">Others</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <input name="title" type="text" class="form-control" id="title" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" value="{{ form_data.get('title', '') }}" placeholder="Title" required>
-                    </div>
-                    <div class="col-lg-12">
-                      <textarea class="form-control" name="req" rows="6" id="req" placeholder="Your requirements" value="{{ form_data.get('req', '') }}" pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$" required></textarea>
-                    </div>
-                    <div class="col-lg-12 d-flex flex-column align-items-center">
-                      <!-- Add Google reCAPTCHA widget -->
-                      <div class="g-recaptcha" data-sitekey="6LevP-EqAAAAAOmuFcMpkJDFhpesq_VFIME6tIBs" data-callback="recaptchaCallback"></div>
-                      <small id="captcha-error" class="error" style="color: red; display: none;">Please complete the CAPTCHA to enable submission.</small>
-                    </div>
-                    <div class="col-lg-12">
-                      <button type="submit" id="form-submit" class="border-button" disabled>Submit</button>
-                    </div>
+              <form class="needs-validation" id="contact" action="/" method="POST" novalidate>
+              <div class="row g-3">
+                <div class="col-lg-6 col-md-12">
+                  <input name="name" type="text" class="form-control" id="name"
+                    pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$"
+                    value="{{ form_data.get('name', '') }}" placeholder="Full Name" required>
+                  <small id="name-error" class="field-error text-danger" style="display:none;">Please enter a valid name (only letters, max 50).</small>
                 </div>
-              </form>            
+
+                <div class="col-lg-6 col-md-12">
+                  <input name="email" type="text" class="form-control" id="email"
+                    placeholder="E-Mail Address" value="{{ form_data.get('email', '') }}" required>
+                  <small id="email-error" class="field-error text-danger" style="display:none;">Please enter a valid email address.</small>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                  <input name="phone" type="tel" class="form-control" id="phone"
+                    placeholder="Phone Number" value="{{ form_data.get('phone', '') }}" required>
+                  <small id="phone-error" class="field-error text-danger" style="display:none;">Please enter a valid phone number with country code.</small>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                  <input name="company" type="text" class="form-control" id="company"
+                    pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$"
+                    value="{{ form_data.get('company', '') }}" placeholder="Company Name" required>
+                  <small id="company-error" class="field-error text-danger" style="display:none;">Please enter a valid company name (max 50 chars).</small>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                  <select name="industrytype" id="industrytype" class="form-select" required>
+                    <option value="" disabled selected>Select Industry type</option>
+                      <option value="Agriculture">Agriculture</option>
+                      <option value="Automotive">Automotive</option>
+                      <option value="Aviation">Aviation</option>
+                      <option value="Banking and Finance">Banking and Finance</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Education">Education</option>
+                      <option value="Energy and Utilities">Energy and Utilities</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Hospitality">Hospitality</option>
+                      <option value="IT and Technology">IT and Technology</option>
+                      <option value="Manufacturing">Manufacturing</option>
+                      <option value="Marketing and Advertising">Marketing and Advertising</option>
+                      <option value="Media and Publishing">Media and Publishing</option>
+                      <option value="Non-Profit">Non-Profit</option>
+                      <option value="Real Estate">Real Estate</option>
+                      <option value="Retail">Retail</option>
+                      <option value="Telecommunications">Telecommunications</option>
+                      <option value="Transportation and Logistics">Transportation and Logistics</option>
+                      <option value="Travel and Tourism">Travel and Tourism</option>
+                      <option value="custom">Others</option>
+                  </select>
+                  <small id="industrytype-error" class="field-error text-danger" style="display:none;">Please select an industry type.</small>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                  <input name="title" type="text" class="form-control" id="title"
+                    pattern="^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$"
+                    value="{{ form_data.get('title', '') }}" placeholder="Title" required>
+                  <small id="title-error" class="field-error text-danger" style="display:none;">Please enter a valid title (max 50 chars).</small>
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="req" rows="6" id="req" placeholder="Your requirements" required>{{ form_data.get('req', '') }}</textarea>
+                  <small id="req-error" class="field-error text-danger" style="display:none;">Please enter your requirements (min 5 characters).</small>
+                </div>
+
+                <div class="col-12 d-flex flex-column align-items-center">
+                  <div class="g-recaptcha" data-sitekey="6LevP-EqAAAAAOmuFcMpkJDFhpesq_VFIME6tIBs" data-callback="recaptchaCallback"></div>
+                  <small id="captcha-error" class="field-error text-danger" style="display:none;">Please complete the CAPTCHA to enable submission.</small>
+                </div>
+                <br>
+                <div class="col-12 text-center">
+                  <br>
+                  <button type="submit" id="form-submit" class="border-button" disabled>Submit</button>
+                </div>
+              </div>
+            </form>           
             </div>
           </div>
         </div>
@@ -601,24 +240,27 @@
     <br>
     <br>
     <!-- Footer Starts Here -->
-    <footer style="position:-ms-page; left: 0; bottom: 0; width: 100%;">
+    <!-- Footer -->
+    <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 footer-item">
-            <h4>San Jose Automation</h4>
-            <p>Feel Free to reach our Social Media Handles</p>
-            <ul class="social-icons">
-              <li><a href="#" target="_blank"><i class="fa-brands fa-square-facebook fa-lg"></i></a></li>
-              <li><a href="#" target="_blank"><i class="fa-brands fa-square-x-twitter fa-lg"></i></a></li>
-              <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <h5>San Jose Automation</h5>
+          </div>
+          <div class="col-md-6">
+            <h5>Additional Pages</h5>
+            <ul class="list-unstyled">
+              <li><a href="#contactus" class="link-light">Contact Us</a></li>
             </ul>
           </div>
-          <div class="col-md-6 footer-item">
-            <h4>Additional Pages</h4>
-            <ul class="menu-list">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#contactus">Contact Us</a></li>
-            </ul>
+        </div>
+      </div>
+      <div class="sub-footer mt-4">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-12">
+              <p class="mb-0">Copyright &copy; San Jose Automation Co., Ltd.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -634,252 +276,158 @@
       </div>
     </div>-->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Required scripts -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Additional Scripts -->
-    <script src="{{url_for('static', filename='assets/js/jquery.singlePageNav.min.js')}}"></script>
-    <script src="{{url_for('static', filename='assets/js/custom.js')}}"></script>
-    <script src="{{url_for('static', filename='assets/js/owl.js')}}"></script>
-    <script src="{{url_for('static', filename='assets/js/slick.js')}}"></script>
-    <script src="{{url_for('static', filename='assets/js/accordions.js')}}"></script>
-    <script src="{{url_for('static', filename='assets/js/intlTelInput.min.js')}}"></script>
-    <script src="{{url_for('static', filename='assets/js/utils.js')}}"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>-->
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Additional Plugins / Scripts (keep originals) -->
+  <script src="{{ url_for('static', filename='assets/js/jquery.singlePageNav.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/owl.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/slick.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/accordions.js') }}"></script>
 
+  <!-- intl-tel-input (phone) -->
+  <script src="{{ url_for('static', filename='assets/js/intlTelInput.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/utils.js') }}"></script>
 
-    <script>
-      $(function() {
-        // Single Page Nav
-        $('#navbarResponsive').singlePageNav({
-          'offset': 100,
-          'filter': ':not(.external)'
-        });
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-        // On mobile, close the menu after nav-link click
-        $('#navbarResponsive .navbar-nav .nav-item .nav-link').click(function(){
-          $('#navbarResponsive').removeClass('show');
-        });
-      });
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const form = document.getElementById("contact");
-          const submitButton = document.getElementById("form-submit");
-      
-          form.addEventListener("submit", function (event) {
-              const captchaResponse = grecaptcha.getResponse();
-              const captchaError = document.getElementById("captcha-error");
-      
-              if (!captchaResponse) {
-                  event.preventDefault(); // Stop form submission
-                  captchaError.style.display = "block";
-              } else {
-                  captchaError.style.display = "none"; // Allow submission if CAPTCHA is verified
-              }
-          });
-      });
-    </script>
-  
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
+  <script>
+    // Navbar background change on scroll (Bootstrap 5)
+    (function () {
+      const nav = document.getElementById('mainNav');
+      function scrolled() {
+        if (window.scrollY > 10) nav.classList.add('navbar-scrolled'); else nav.classList.remove('navbar-scrolled');
       }
-    </script>
+      document.addEventListener('scroll', scrolled, { passive: true });
+      scrolled();
+    })();
 
-    <script>
-      // Function to initialize the carousel animation
-      function startCarousel() {
-          const container = document.getElementById('imageContainer');
-          const images = container.querySelectorAll('img');
-          const totalWidth = Array.from(images).reduce((total, img) => total + img.clientWidth + 20, 0);
-          container.style.width = `${totalWidth}px`;
-          container.innerHTML += container.innerHTML; // Duplicate images for infinite loop
+    // Flash popups show & auto-hide
+    (function () {
+      const flashMessages = document.querySelectorAll('.flash-popup');
+      flashMessages.forEach(msg => {
+        msg.style.display = 'block';
+        setTimeout(() => { msg.style.display = 'none'; }, 4000);
+      });
+    })();
+  </script>
 
-          const keyframes = `@keyframes scroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(calc(-${totalWidth}px)); }
-          }`;
-          document.styleSheets[0].insertRule(keyframes, document.styleSheets[0].cssRules.length);
+  <!-- Consolidated form validation + intl-tel-input + reCAPTCHA (adapted - logic preserved) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contact');
+      if (!form) return;
+      const submitButton = document.getElementById('form-submit');
+      if (submitButton) submitButton.disabled = true;
 
-          container.style.animation = `scroll 20s linear infinite`;
+      const fields = {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        phone: document.getElementById('phone'),
+        company: document.getElementById('company'),
+        industrytype: document.getElementById('industrytype'),
+        title: document.getElementById('title'),
+        req: document.getElementById('req')
+      };
+
+      function fieldErrorEl(id) { return document.getElementById(id + '-error'); }
+
+      const patterns = {
+        name: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/,
+        email: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
+        company: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z0-9\s\.\-&,_]{1,50}$/,
+        title: /^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$/,
+        req: /^(?!.*(http|www|\.com|\.net|\.org)).{5,}$/
+      };
+
+      let phoneIntl = null;
+      if (window.intlTelInput && fields.phone) {
+        try {
+          phoneIntl = window.intlTelInput(fields.phone, {
+            initialCountry: 'us',
+            utilsScript: "{{ url_for('static', filename='assets/js/utils.js') }}"
+          });
+        } catch (e) {
+          console.warn('intlTelInput init failed:', e);
+        }
       }
 
-      // Start the carousel once the DOM content is loaded
-      document.addEventListener('DOMContentLoaded', startCarousel);
-    </script>
+      function showFieldError(id, message) {
+        const err = fieldErrorEl(id);
+        if (err) { err.textContent = message; err.style.display = 'block'; }
+        const el = fields[id]; if (el) { el.classList.add('is-invalid'); el.classList.remove('is-valid'); }
+      }
+      function clearFieldError(id) {
+        const err = fieldErrorEl(id); if (err) err.style.display = 'none';
+        const el = fields[id]; if (el) { el.classList.remove('is-invalid'); el.classList.add('is-valid'); }
+      }
 
-    <!--Phone Number https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js-->
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const phoneInputField = document.querySelector("#phone");
-        const phoneInput = window.intlTelInput(phoneInputField, {
-          initialCountry: "us",
-          utilsScript: "{{url_for('static', filename='assets/js/utils.js')}}"
-        });
-        const form = document.getElementById("contact");
-        form.addEventListener("submit", function(event) {
-          event.preventDefault();
-          const errorMsg = document.getElementById('error-msg');
-          if (phoneInput.getSelectedCountryData().iso2 === null) {
-            errorMsg.textContent = 'Please select a country code.';
-            errorMsg.style.display = 'block';
-            phoneInputField.classList.add('error-border');
-          } else if (!phoneInput.isValidNumber()) {
-            errorMsg.textContent = 'Please enter a valid phone number.';
-            errorMsg.style.display = 'block';
-            phoneInputField.classList.add('error-border');
-          } else {
-            phoneInputField.value = phoneInput.getNumber();
-            form.submit();
+      function validateField(id) {
+        const el = fields[id]; if (!el) return true;
+        const val = el.value.trim();
+        if (id === 'phone') {
+          if (!phoneIntl) { showFieldError('phone', 'Phone validation not available.'); return false; }
+          if (!phoneIntl.isValidNumber()) { showFieldError('phone', 'Please enter a valid phone number (include country code).'); return false; }
+          clearFieldError('phone'); return true;
+        }
+        if (id === 'industrytype') {
+          if (!val) { showFieldError('industrytype', 'Please select an industry type.'); return false; }
+          clearFieldError('industrytype'); return true;
+        }
+        const pat = patterns[id];
+        if (pat) {
+          if (!pat.test(val)) {
+            const defaultMsgs = {
+              name: 'Enter valid name (letters only, max 50).',
+              email: 'Enter a valid email address.',
+              company: 'Enter a valid company name (max 50).',
+              title: 'Enter a valid title (max 50).',
+              req: 'Enter requirements (min 5 characters).'
+            };
+            showFieldError(id, defaultMsgs[id] || 'Invalid value.');
+            return false;
           }
-        });
-      });
-    </script>
+        } else {
+          if (el.hasAttribute('required') && val.length === 0) { showFieldError(id, 'This field is required.'); return false; }
+        }
+        clearFieldError(id); return true;
+      }
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const form = document.getElementById("contact");
-          const submitButton = document.getElementById("form-submit");
-          const captchaError = document.getElementById("captcha-error");
-      
-          // Create a single error notification at the top
-          const errorNotification = document.createElement("div");
-          errorNotification.id = "form-error-notification";
-          errorNotification.style.display = "none"; // Initially hidden
-          errorNotification.style.color = "white";
-          errorNotification.style.backgroundColor = "red";
-          errorNotification.style.padding = "10px";
-          errorNotification.style.borderRadius = "5px";
-          errorNotification.style.marginBottom = "10px";
-          errorNotification.style.textAlign = "center";
-          errorNotification.style.fontSize = "14px";
-          form.insertAdjacentElement("beforebegin", errorNotification);
-      
-          // Validation patterns for fields
-          const fields = [
-              { id: "name", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Name. Only alphabets allowed." },
-              { id: "email", pattern: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, error: "Invalid Email" },
-              { id: "phone", pattern: null, error: "Invalid phone number" }, // Handled separately
-              { id: "company", pattern: /^(?!.*(http|www|\.com|\.net|\.org))^[A-Za-z\s]{1,50}$/, error: "Enter Valid Company Name" },
-              { id: "industrytype", pattern: /.+/, error: "Please select an industry type" },
-              { id: "title", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{1,50}$/, error: "Enter Valid Title" },
-              { id: "req", pattern: /^(?!.*(http|www|\.com|\.net|\.org)).{5,}$/s, error: "Enter a valid Inquiry. Must be at least 5 characters." }
-          ];
-      
-          // Initialize phone validation
-          const phoneInput = document.getElementById("phone");
-          const phoneIntl = window.intlTelInput(phoneInput, {
-              initialCountry: "us",
-              utilsScript: "{{url_for('static', filename='assets/js/utils.js')}}"
-          });
-      
-          // Function to validate fields
-          function validateField(field) {
-              const input = document.getElementById(field.id);
-              let isValid = true;
-      
-              if (field.pattern) {
-                  isValid = field.pattern.test(input.value.trim());
-              } else if (field.id === "phone") {
-                  isValid = phoneIntl.isValidNumber();
-              }
-      
-              if (!isValid) {
-                  showErrorNotification(field.error);
-              } else {
-                  clearErrorNotification();
-              }
-      
-              return isValid;
-          }
-      
-          // Function to show error message at the top
-          function showErrorNotification(message) {
-              errorNotification.textContent = message;
-              errorNotification.style.display = "block";
-          }
-      
-          // Function to clear error notification
-          function clearErrorNotification() {
-              errorNotification.style.display = "none";
-          }
-      
-          // Function to check overall validation
-          function checkValidation() {
-              let allValid = fields.every(validateField);
-              let captchaValid = grecaptcha.getResponse().length > 0; // Check CAPTCHA response
-              submitButton.disabled = !(allValid && captchaValid);
-          }
-      
-          // Debounce function to optimize real-time validation
-          function debounce(func, delay) {
-              let timeout;
-              return function (...args) {
-                  clearTimeout(timeout);
-                  timeout = setTimeout(() => func.apply(this, args), delay);
-              };
-          }
-      
-          // Attach event listeners for real-time validation
-          fields.forEach(field => {
-              const input = document.getElementById(field.id);
-              const debouncedValidate = debounce(() => {
-                  validateField(field);
-                  checkValidation();
-              }, 500);
-      
-              input.addEventListener("input", debouncedValidate);
-      
-              if (field.id === "industrytype") {
-                  input.addEventListener("change", checkValidation);
-              }
-          });
-      
-          // Function to enable submit button only after CAPTCHA is completed
-          function enableSubmitButton() {
-              checkValidation();
-              captchaError.style.display = grecaptcha.getResponse().length > 0 ? "none" : "block";
-          }
-      
-          // Attach function to reCAPTCHA callback
-          window.recaptchaCallback = enableSubmitButton;
-      
-          // Prevent form submission if CAPTCHA is not clicked
-          form.addEventListener("submit", function (event) {
-              if (grecaptcha.getResponse().length === 0) {
-                  event.preventDefault(); // Stop form submission
-                  captchaError.style.display = "block"; // Show error message
-              }
-          });
-      
-          // Initial validation check
-          checkValidation();
+      function debounce(fn, delay) { let t; return function () { clearTimeout(t); t = setTimeout(() => fn.apply(this, arguments), delay); }; }
+
+      function validateAllAndToggleSubmit() {
+        const fieldIds = Object.keys(fields);
+        const allFieldsValid = fieldIds.every(id => validateField(id));
+        const captchaOk = (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse && grecaptcha.getResponse().length > 0);
+        if (submitButton) submitButton.disabled = !(allFieldsValid && captchaOk);
+        const ce = document.getElementById('captcha-error'); if (ce) ce.style.display = captchaOk ? 'none' : (captchaOk === false && !allFieldsValid ? ce.style.display : ce.style.display);
+        return allFieldsValid && captchaOk;
+      }
+
+      Object.keys(fields).forEach(id => {
+        const el = fields[id]; if (!el) return; const handler = debounce(() => { validateField(id); validateAllAndToggleSubmit(); }, 350);
+        const evt = (el.tagName.toLowerCase() === 'select') ? 'change' : 'input'; el.addEventListener(evt, handler);
       });
-    </script>
-      
-    <script>
-      // Show flash messages as popups
-      document.addEventListener("DOMContentLoaded", function () {
-          const flashMessages = document.querySelectorAll(".flash-popup");
-          flashMessages.forEach(msg => {
-              msg.style.display = "block";
-              setTimeout(() => {
-                  msg.style.display = "none";
-              }, 4000); // Hide after 4 seconds
-          });
+
+      window.recaptchaCallback = function () { validateAllAndToggleSubmit(); const ce = document.getElementById('captcha-error'); if (ce) ce.style.display = (grecaptcha.getResponse().length > 0) ? 'none' : 'block'; };
+
+      form.addEventListener('submit', function (e) {
+        let ok = true; Object.keys(fields).forEach(id => { if (!validateField(id)) ok = false; });
+        const captchaOk = (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse && grecaptcha.getResponse().length > 0);
+        if (!captchaOk) { ok = false; const ce = document.getElementById('captcha-error'); if (ce) ce.style.display = 'block'; }
+        if (!ok) { e.preventDefault(); const firstInvalid = form.querySelector('.is-invalid'); if (firstInvalid) firstInvalid.focus(); return; }
+        if (phoneIntl && phoneIntl.isValidNumber()) { fields.phone.value = phoneIntl.getNumber(); } else if (fields.phone) { e.preventDefault(); showFieldError('phone', 'Please enter a valid phone number.'); fields.phone.focus(); return; }
       });
-    </script>
+
+      setTimeout(validateAllAndToggleSubmit, 200);
+    });
+  </script>
+
+
+
 
   </body>
 </html>
